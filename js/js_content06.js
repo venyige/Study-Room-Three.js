@@ -146,7 +146,7 @@ function init() {
     var dummyMat = new THREE.MeshBasicMaterial({ color: 0x66aa22, map: stoneTex1, side: THREE.backSide });
     //glassMat1.side = THREE.BackSide;
   //  glassMat1.shading = THREE.FlatShading
-    loader.load("subdivided_brilliant_sn.json", function (geometry) {
+    loader.load("../data/subdivided_brilliant_sn.json", function (geometry) {
         diamondUpper = new THREE.Mesh(geometry, glassMat1);
         diamondUpper.position.x = 0;
         diamondUpper.position.y = 50;
@@ -159,7 +159,7 @@ function init() {
     var glassMat2 = new THREE.ShaderMaterial(parameters2); // create shadermaterial with parameters
     //		glassMat2.shading = THREE.FlatShading
     // 				glassMat2.side = THREE.BackSide;
-    loader.load("subdivided_brilliant_fn.json", function (geometry) {
+    loader.load("../data/subdivided_brilliant_fn.json", function (geometry) {
         diamondLower = new THREE.Mesh(geometry, glassMat2);
         diamondLower.position.x = 0;
         diamondLower.position.y = 50;
