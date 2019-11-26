@@ -53,7 +53,7 @@ function init() {
     camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 80000);
     camera.position.y = 100;
     scene = new THREE.Scene();
-    var bgTexture = textureLoader.load('study_uv_sphere_map_coloured.jpg');
+    var bgTexture = textureLoader.load('../img/study_uv_sphere_map_coloured.jpg');
     bgMmesh = new THREE.Mesh(new THREE.SphereGeometry(500, 80, 40), new THREE.MeshBasicMaterial({ map: bgTexture }));
     bgMmesh.scale.x = -1;
     bgTexture.mapping = THREE.UVMapping;
@@ -90,7 +90,7 @@ function init() {
     info.style.textAlign = 'center';
     info.innerHTML = '<a href="http://threejs.org" target="_blank">three.js r74 </a> DatNet study';
     container.appendChild(info);
-    var stoneTex1 = textureLoader.load('6.jpg');
+    var stoneTex1 = textureLoader.load('../img/6.jpg');
 
 
     var metalMaterial = new THREE.MeshBasicMaterial({ map: stoneTex1, envMap: cubeCameraS.renderTarget });
