@@ -90,7 +90,7 @@ function init() {
     info.style.textAlign = 'center';
     info.innerHTML = '<a href="http://threejs.org" target="_blank">three.js r74 </a> DatNet study';
     container.appendChild(info);
-    var stoneTex1 = textureLoader.load('../img/6.jpg');
+    var stoneTex1 = textureLoader.load('../img/worn.jpg');
 
 
     var metalMaterial = new THREE.MeshBasicMaterial({ map: stoneTex1, envMap: cubeCameraS.renderTarget });
