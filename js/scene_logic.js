@@ -88,7 +88,7 @@ function init() {
     info.style.top = '10px';
     info.style.width = '100%';
     info.style.textAlign = 'center';
-    info.innerHTML = '<h4><a href="http://threejs.org" target="_blank">three.js r74 </a> DatNet study </h4><'+
+    info.innerHTML = '<h4><a href="http://threejs.org" target="_blank">three.js r74 </a> DatNet study </h4>'+
         '<a href="https://github.com/venyige/Study-Room-Three.js" target="_blank">GitHub repo</a><br />'+
         '<a href="https://www.venyige.com/" target="_blank">Home</a><br />';
     container.appendChild(info);
