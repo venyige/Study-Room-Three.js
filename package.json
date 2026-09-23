@@ -1,0 +1,21 @@
+{
+  "name": "study-room-three-js",
+  "private": true,
+  "description": "three.js study: a double-refraction diamond in a panorama of a study room",
+  "type": "module",
+  "scripts": {
+    "start": "http-server . -p 8080 -c-1",
+    "lint": "eslint .",
+    "check:assets": "node tests/check-assets.mjs",
+    "test:smoke": "node tests/smoke.mjs",
+    "test": "npm run lint && npm run check:assets && npm run test:smoke"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.11.0",
+    "globals": "^17.12.0",
+    "http-server": "^14.1.1",
+    "playwright": "^1.63.0"
+  }
+}
