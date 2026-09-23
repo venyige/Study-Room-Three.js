@@ -1,14 +1,13 @@
-*
-!.gitignore
-!index.html
-!README.md
-!/**/
-!img/study_uv_sphere_map_coloured.jpg
-!img/worn.jpg
-!data/*
-!js/three.min.js
-!js/js_content06.js
-!js/FresnelShader_web2.js
-!js/dat.gui.min.js
-!css/*
+# Dependencies (dev tooling only; the site itself has no build step)
+node_modules/
 
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+*:Zone.Identifier
+test-results/
+.claude/worktrees/
+.claude/settings.local.json
