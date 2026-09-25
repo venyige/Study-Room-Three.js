@@ -87,8 +87,8 @@ def block(name, problem):
         f"{problem}.\n"
         f"Required format: ISSUE__short_slug -- the slug is lowercase ASCII, "
         f"underscore-separated, at most {SLUG_WORD_CAP} words; '__' (two "
-        f"underscores) separates the numeric issue id from the slug. Omitting "
-        f"the issue number is allowed for spikes (e.g. 'excel_export_hotfix').\n"
+        f"underscores) separates the numeric issue id from the slug. Open the "
+        f"issue first: its number names the branch.\n"
         f"{suggestion_line}"
         f"Re-run the command with a corrected branch name."
     )
