@@ -159,6 +159,11 @@ def branch_after_flag(rest, flags):
 def branch_create_name(rest):
     delete_flags = {"-d", "-D", "--delete"}
     rename_flags = {"-m", "-M", "--move", "-c", "-C", "--copy"}
+    # Flags that may accompany creating a branch. Any other flag (--list,
+    # --contains, -u, -v, ...) makes this a query or an upstream change whose
+    # positionals are patterns or commits, not a new name -> fail open.
+    create_flags = {"-f", "--force", "-t", "--track", "--no-track",
+                    "-q", "--quiet", "--create-reflog", "--no-create-reflog"}
     is_delete = is_rename = False
     positionals = []
     for a in rest:
@@ -166,7 +171,12 @@ def branch_create_name(rest):
             is_delete = True
         elif a in rename_flags:
             is_rename = True
-        elif not a.startswith("-"):
+        elif a.startswith("--track="):
+            continue
+        elif a.startswith("-"):
+            if a not in create_flags:
+                return []
+        else:
             positionals.append(a)
     if is_delete or not positionals:
         return []
