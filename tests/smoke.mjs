@@ -5,9 +5,10 @@
 import { createReadStream, existsSync, mkdirSync, statSync } from 'node:fs';
 import { createServer } from 'node:http';
 import { extname, join, normalize } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 
-const root = new URL('..', import.meta.url).pathname;
+const root = fileURLToPath(new URL('..', import.meta.url));
 const RENDER_WAIT_MS = 8000;
 const TYPES = {
     '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css',
