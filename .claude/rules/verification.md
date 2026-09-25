@@ -14,7 +14,8 @@ npm test                            # lint + asset check + smoke test
 - `npm run check:assets`: every `assets/...` path quoted in `src/` exists,
   and every model parses as three.js legacy JSON.
 - `npm run test:smoke`: headless Chromium with SwiftShader WebGL. Fails on
-  any page error, console error or HTTP error, and writes
+  any page error, console error, WebGL `GL_INVALID_*` warning (how a
+  render-pass feedback loop shows up) or HTTP error, and writes
   `test-results/smoke.png`. **Look at the screenshot** after a rendering
   change: a clean console does not prove the diamond still refracts.
 

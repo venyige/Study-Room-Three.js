@@ -1,6 +1,6 @@
 // Loads the demo in headless Chromium (software WebGL) and fails on any
-// JavaScript error, console error or failed request. Leaves a screenshot in
-// test-results/ for a quick visual check.
+// JavaScript error, console error, WebGL GL_INVALID_* warning or failed
+// request. Leaves a screenshot in test-results/ for a quick visual check.
 // Run: npm run test:smoke   (first time: npx playwright install chromium)
 import { createReadStream, existsSync, mkdirSync, statSync } from 'node:fs';
 import { createServer } from 'node:http';
@@ -35,7 +35,11 @@ const problems = [];
 try {
     const page = await browser.newPage({ viewport: { width: 1000, height: 700 } });
     page.on('pageerror', (error) => problems.push(`page error: ${error.message}`));
-    page.on('console', (msg) => { if (msg.type() === 'error') problems.push(`console error: ${msg.text()}`); });
+    // GL_INVALID_* arrives as a warning; it is how a broken render pass shows
+    // up (e.g. a feedback loop, see .claude/rules/threejs-r74.md invariant 3).
+    page.on('console', (msg) => {
+        if (msg.type() === 'error' || /GL_INVALID_/.test(msg.text())) problems.push(`console ${msg.type()}: ${msg.text()}`);
+    });
     page.on('response', (res) => { if (res.status() >= 400) problems.push(`HTTP ${res.status()}: ${res.url()}`); });
     page.on('requestfailed', (req) => problems.push(`request failed: ${req.url()}`));
 

@@ -110,8 +110,8 @@ npm test                          # lint + asset check + smoke test
 ```
 
 The smoke test opens the page in headless Chromium (software WebGL). It fails
-on any JavaScript error, console error or missing file, and saves
-`test-results/smoke.png`.
+on any JavaScript error, console error, WebGL `GL_INVALID_*` warning or
+missing file, and saves `test-results/smoke.png`.
 
 ## GitHub setup
 
