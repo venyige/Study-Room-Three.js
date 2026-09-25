@@ -1,0 +1,19 @@
+body {
+    background-color: #000;
+    margin: 0;
+    overflow: hidden;
+}
+
+#info {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    pointer-events: none;
+}
+
+#info a {
+    color: #fff;
+    pointer-events: auto;
+}

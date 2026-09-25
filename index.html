@@ -1,43 +1,28 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>three.js webgl - materials - dynamic reflection/refraction</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<style>
-			body {
-				background-color: #000000;
-				margin: 0px;
-				overflow: hidden;
-			}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>Study Room – double-refraction diamond (three.js)</title>
+    <meta name="description" content="A three.js study: a diamond faked with a two-pass cube-map double refraction, in a panorama of my study room.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app"></div>
 
-			#info {
-				position: absolute;
-				top: 0px; width: 100%;
-				color: #ffffff;
-				padding: 5px;
-				font-family:Monospace;
-				font-size:13px;
-				font-weight: bold;
-				text-align:center;
-			}
+    <div id="info">
+        <h4><a href="https://threejs.org" target="_blank" rel="noopener">three.js r74</a> DatNet study</h4>
+        <a href="https://github.com/venyige/Study-Room-Three.js" target="_blank" rel="noopener">GitHub repo</a><br>
+        <a href="https://www.venyige.com/" target="_blank" rel="noopener">Home</a>
+    </div>
 
-			a {
-				color: #ffffff;
-			}
-		</style>
-	</head>
-	<body>
+    <noscript>This demo needs JavaScript and WebGL.</noscript>
 
-
-        <script src="js/three.min.js"></script>
-        <script src="js/OrbitControls.js"></script>
-        <script src="js/fresnelshader.js"></script>
-        <script src="js/dat.gui.min.js"></script>
-        <script src="js/scene_logic.js"></script>
-        <link type="text/css" rel="stylesheet" href="css/dat-gui-swec.css">
-       
-
-
-	</body>
+    <!-- Vendored libraries expose the THREE and dat globals. -->
+    <script src="vendor/three.min.js"></script>
+    <script src="vendor/dat.gui.min.js"></script>
+    <!-- After dat.gui: it injects its default CSS into <head> on load, this must override it. -->
+    <link rel="stylesheet" href="css/dat-gui-theme.css">
+    <script type="module" src="src/main.js"></script>
+</body>
 </html>
