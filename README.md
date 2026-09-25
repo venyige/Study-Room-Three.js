@@ -22,8 +22,8 @@ This demo fakes the second bend with a second, hidden stone:
    ┌──── outer stone ────┐   visible; reflects map A, refracts map B
    │        │            │
    │        ▼            │
-   │   inner stone       │   never drawn on screen; placed behind the outer one
-   │  (on the view ray)  │   on the camera ray; refracts map A
+   │   inner stone       │   never drawn on screen; sits behind the outer one
+   │  (on the view ray)  │   and refracts map A
    └─────────────────────┘
 
    map A = cube map of the room, no diamond          (reflect camera)
