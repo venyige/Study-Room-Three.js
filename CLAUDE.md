@@ -13,6 +13,13 @@ Detailed rules live in `.claude/rules/` and are loaded automatically:
 | `threejs-r74.md` | API constraints of the vendored three.js, the render-pass invariants (scoped to `src/`) |
 | `assets.md` | model and texture conventions (scoped to `assets/`) |
 
+Skills in `.claude/skills/`:
+
+| Skill | Use |
+|---|---|
+| `review-pull-request` | "Review PR #N and post findings as review threads": the whole procedure, the API calls and the comment format |
+| `address-review-threads` | Fix, reply to and resolve the open threads on a PR |
+
 ## Layout
 
 - `index.html` — loads `vendor/` scripts as globals, then `src/main.js` as an ES module

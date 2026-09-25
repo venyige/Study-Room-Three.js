@@ -29,4 +29,8 @@ pull request (= merge request) → review → merge.
   Without `gh` or a token, push the branch over SSH and give the user the
   pre-filled `https://github.com/venyige/Study-Room-Three.js/compare/master...BRANCH?expand=1`
   link. Never paste a token into a command.
+- **Review** happens as inline review threads on the PR (the GitLab MR
+  discussions). Posting them: `review-pull-request` skill. Working through
+  them: `address-review-threads` skill. Merge only when every thread is
+  resolved and CI passes.
 - **No force-push** to a branch under review unless the user asks.
